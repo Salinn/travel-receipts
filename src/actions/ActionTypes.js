@@ -1,0 +1,2 @@
+export const FETCHED_RECEIPTS = 'FETCHED_RECEIPTS';
+export const IMAGE_CLICKED = 'IMAGE_CLICKED';
