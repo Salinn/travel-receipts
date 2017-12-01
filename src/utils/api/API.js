@@ -1,4 +1,5 @@
 import faker from 'faker';
+import moment from 'moment';
 
 export const fetchAllRecipts = () => {
     let receipts = [];
@@ -12,7 +13,7 @@ export const fetchAllRecipts = () => {
             email: faker.internet.email(),
             amountSpent: faker.commerce.price(),
             chargeTo: faker.company.companyName(),
-            date: moment(faker.date.past()).format('MMMM Do YYYY, h:mm a'),
+            date: moment(faker.date.past()).format('MMMM Do YYYY'),
             reason: faker.lorem.sentence(),
             photo: `https://s3.amazonaws.com/react-collapsing-table-photos/${randomPicture}.jpeg`,
         })
@@ -34,7 +35,7 @@ export const fetchLastMonthsReceipts = () => {
           email: faker.internet.email(),
           amountSpent: faker.commerce.price(),
           chargeTo: faker.company.companyName(),
-          date: moment(faker.date.past()).format('MMMM Do YYYY, h:mm a'),
+          date: moment(faker.date.past()).format('MMMM Do YYYY'),
           reason: faker.lorem.sentence(),
           photo: `https://s3.amazonaws.com/react-collapsing-table-photos/${randomPicture}.jpeg`,
       })

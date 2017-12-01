@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import * as ReceiptActions from '../actions/ReceiptActions';
 //Components
 import App from '../components/App';
+import { getEmailIcon } from '../assets/icons/Icon';
 
 export class ReceiptsScreen extends Component {
     fetchAllReceipts = () => {
@@ -20,9 +21,13 @@ export class ReceiptsScreen extends Component {
         this.props.actions.clickedImage({ imageURL });
     }
 
+    getEmailLogo = ({ email }) => {
+        return getEmailIcon({ email });
+    }
+
     render() {
         const { receipts, columns, imageModal } = this.props;
-        const tableCallbacks = { photo: this.clickedImage }
+        const tableCallbacks = { photo: this.clickedImage, email: this.getEmailLogo }
         return (
             <App receipts={ receipts }
                  columns={ columns }
