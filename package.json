@@ -9,7 +9,7 @@
     "moment": "^2.19.3",
     "prop-types": "^15.6.0",
     "react": "^15.3.0",
-    "react-collapsing-table": "0.0.16",
+    "react-collapsing-table": "0.0.17",
     "react-dom": "^15.3.0",
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.6",
