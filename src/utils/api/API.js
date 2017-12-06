@@ -19,13 +19,13 @@ export const fetchAllRecipts = () => {
         })
     }
 
-    return { data: receipts };
-}
+    return { data: receipts.sort(dynamicSort({ column: 'email'})) };
+};
 
 export const fetchLastMonthsReceipts = () => {
-  let receipts = []
+  let receipts = [];
   let randomPicture;
-  const totalReceipts = faker.random.number({ max: 20 })
+  const totalReceipts = faker.random.number({ min: 3, max: 20 });
   for(let i = 0; i < totalReceipts; i++){
       randomPicture = Math.floor(Math.random() * 6) + 1 ;
       receipts.push({
@@ -41,5 +41,9 @@ export const fetchLastMonthsReceipts = () => {
       })
   }
 
-  return { data: receipts };
-}
+  return { data: receipts.sort(dynamicSort({ column: 'email'})) };
+};
+
+const dynamicSort = ({ column }) => {
+    return (a, b) => ((a[column] < b[column]) ? -1 : (a[column] > b[column]) ? 1 : 0);
+};
