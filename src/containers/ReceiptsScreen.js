@@ -11,19 +11,19 @@ import { getEmailIcon } from '../assets/icons/Icon';
 export class ReceiptsScreen extends Component {
     fetchAllReceipts = () => {
         this.props.actions.fetchAllReceipts();
-    }
+    };
 
     fetchLastMonthsReceipts = () => {
         this.props.actions.fetchLastMonthsReceipts();
-    }
+    };
 
     clickedImage = ({ imageURL }) => {
         this.props.actions.clickedImage({ imageURL });
-    }
+    };
 
     getEmailLogo = ({ email }) => {
         return getEmailIcon({ email });
-    }
+    };
 
     render() {
         const { receipts, columns, imageModal } = this.props;
